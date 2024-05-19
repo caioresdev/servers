@@ -1,0 +1,14 @@
+services:
+    kavita:
+        image: jvmilazz0/kavita:latest    
+        container_name: kavita
+        volumes:
+            - ./manga:/manga            # trocar pela pasta
+            - ./comics:/comics          # trocar pela pasta
+            - ./books:/books            # trocar pela pasta
+            - ./data:/kavita/config     # trocar pela pasta
+        environment:
+            - TZ=Your/Timezone
+        ports:
+            - "5000:5000" 
+        restart: unless-stopped
